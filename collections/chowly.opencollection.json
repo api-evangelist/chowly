@@ -1,0 +1,73 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Chowly POS Integration API",
+    "version": "1.0",
+    "description": "Partial, best-effort Open Collection for the Chowly POS integration API. Chowly's API is partner-gated and provisioned per restaurant location via an API key. The requests below model the operations surfaced by Chowly's public API client libraries (get menu, create order, get order) against https://api.chowlyinc.com. Paths and payloads are representative and not authoritative; confirm with Chowly partner documentation."
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "apikey": {
+        "in": "header",
+        "name": "Authorization",
+        "value": "{{apiKey}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.chowlyinc.com/orders",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit an order to be injected into the restaurant POS. Path and payload are representative; the order schema is partner-gated and not publicly documented."
+        },
+        {
+          "info": {
+            "name": "Retrieve an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chowlyinc.com/orders/{orderId}"
+          },
+          "docs": "Retrieve a previously submitted order by its identifier. Path and response schema are representative and partner-gated."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Menu",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve the menu",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chowlyinc.com/menu"
+          },
+          "docs": "Retrieve the menu associated with the API key's location. Path and response schema are representative and partner-gated."
+        }
+      ]
+    }
+  ]
+}

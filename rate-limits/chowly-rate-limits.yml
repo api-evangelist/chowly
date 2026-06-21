@@ -1,0 +1,46 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Chowly
+providerId: chowly
+created: '2026-06-21'
+modified: '2026-06-21'
+reconciled: false
+tags:
+- Restaurants
+- Online Ordering
+- Delivery
+- POS Integration
+- Menu Sync
+- Rate Limiting
+- Quotas
+- Throttling
+description: >-
+  Chowly does not publish rate limits for its partner-gated POS integration
+  API. Access is provisioned per location via an API key under a commercial /
+  partner agreement, and any throttling, quota, or concurrency limits are
+  defined in that partner documentation rather than on a public page. Specific
+  limit values are not reconciled in this artifact.
+notes: >-
+  No public rate-limit documentation was found. Confirm request, order, and
+  menu-sync limits with Chowly partner documentation on reconciliation. Apply
+  standard backoff with Retry-After handling.
+sources:
+- https://www.chowly.com
+- https://chowly.help/s/faqs
+responseCodes:
+  throttled: 429
+limits:
+- name: API Requests
+  scope: location
+  metric: requests
+  limit: see provider partner documentation
+  notes: Not publicly documented; defined per partner agreement and provisioned per location API key.
+policies:
+- name: Per-Location Provisioning
+  description: Each restaurant location is keyed by its own Chowly API key; limits are applied per location.
+- name: Backoff Strategy
+  description: Clients should implement exponential backoff with jitter and honor Retry-After if a 429 is returned.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

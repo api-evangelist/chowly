@@ -1,0 +1,118 @@
+aid: chowly
+url: https://raw.githubusercontent.com/api-evangelist/chowly/refs/heads/main/apis.yml
+name: Chowly
+kind: company
+description: Chowly is a restaurant digital-ordering and delivery-integration platform
+  that connects third-party delivery marketplaces (DoorDash, Uber Eats, Grubhub, and
+  150+ others) and direct online ordering into a restaurant's point-of-sale (POS)
+  system. The Chowly platform injects third-party orders directly into the POS,
+  synchronizes menus across every channel, and manages locations. Its developer
+  surface is a partner-gated POS integration API keyed per location; the most
+  commonly referenced operations are menu retrieval and order creation/retrieval.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Restaurants
+- Online Ordering
+- Delivery
+- POS Integration
+- Menu Sync
+created: '2026-06-21'
+modified: '2026-06-21'
+specificationVersion: '0.19'
+apis:
+- aid: chowly:orders
+  name: Chowly Orders API
+  tags:
+  - Orders
+  - Delivery
+  - POS Integration
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.chowly.com/solutions/order-integration/
+  baseURL: https://api.chowlyinc.com
+  properties:
+  - url: https://www.chowly.com/solutions/order-integration/
+    type: Documentation
+  - url: openapi/chowly-openapi.yml
+    type: OpenAPI
+  - url: collections/chowly.postman_collection.json
+    type: PostmanCollection
+  - url: collections/chowly.opencollection.json
+    type: OpenCollection
+  description: Receives third-party marketplace and direct online orders and injects
+    them into the restaurant POS. Public client libraries reference order creation
+    and order retrieval operations against the Chowly POS integration API. The full
+    order surface is partner-gated and provisioned per location via an API key.
+- aid: chowly:menu-sync
+  name: Chowly Menu Sync API
+  tags:
+  - Menu Sync
+  - Menu
+  - MenuMatch
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.chowly.com/solutions/order-integration/
+  baseURL: https://api.chowlyinc.com
+  properties:
+  - url: https://www.chowly.com/solutions/order-integration/
+    type: Documentation
+  - url: openapi/chowly-openapi.yml
+    type: OpenAPI
+  - url: collections/chowly.postman_collection.json
+    type: PostmanCollection
+  - url: collections/chowly.opencollection.json
+    type: OpenCollection
+  description: Publishes and synchronizes a single source-of-truth menu across 150+
+    third-party and direct ordering channels (marketed as MenuMatch). Public client
+    libraries reference a menu retrieval operation against the Chowly POS integration
+    API; the authoring/publishing surface is partner-gated.
+- aid: chowly:stores
+  name: Chowly Stores API
+  tags:
+  - Stores
+  - Locations
+  - Provisioning
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.chowly.com/chowly-platform/
+  baseURL: https://api.chowlyinc.com
+  properties:
+  - url: https://www.chowly.com/chowly-platform/
+    type: Documentation
+  - url: openapi/chowly-openapi.yml
+    type: OpenAPI
+  description: Restaurant store/location provisioning and management. Each location
+    is keyed by its own Chowly API key, and the platform exposes a Manage Locations
+    surface for enabling channels per store. No standalone public store/location
+    endpoint is documented; the operation is described here for completeness.
+- aid: chowly:integrations
+  name: Chowly Integrations API
+  tags:
+  - Integrations
+  - Marketplaces
+  - Webhooks
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://partners.olo.com/partners/chowly/
+  baseURL: https://api.chowlyinc.com
+  properties:
+  - url: https://www.chowly.com/solutions/order-integration/
+    type: Documentation
+  description: Connects third-party delivery marketplaces (DoorDash, Uber Eats,
+    Grubhub, and 150+ channels) and 50+ native POS systems (Toast, Square, SpotOn,
+    Clover, and others). Marketplace and POS partners integrate through Chowly's
+    partner program and webhook delivery rather than a documented public REST surface.
+common:
+- type: GitHubOrganization
+  url: https://github.com/Chowly
+- type: LinkedIn
+  url: https://www.linkedin.com/company/chowly
+- type: Website
+  url: https://www.chowly.com
+- type: Documentation
+  url: https://chowly.help/s/faqs
+- type: Plans
+  url: plans/chowly-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/chowly-rate-limits.yml
+- type: FinOps
+  url: finops/chowly-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

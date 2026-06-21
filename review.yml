@@ -1,0 +1,104 @@
+aid: chowly
+name: Chowly
+review:
+  question: Does Chowly expose an openly documented, self-serve public developer API?
+  answer: false
+  date: '2026-06-21'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was created. Chowly references webhook delivery for
+    partner integrations, but no openly documented webhook event catalog,
+    payload schema, or streaming (SSE/WebSocket) surface is published. There is
+    nothing publicly documented to model in AsyncAPI as of the review date.
+findings:
+  summary: |
+    Chowly does not operate an openly accessible, self-serve developer API or
+    public developer portal. Chowly is a sales-led restaurant digital-ordering
+    and delivery-integration platform: it injects third-party marketplace
+    orders (DoorDash, Uber Eats, Grubhub, and 150+ channels) into a restaurant
+    POS, synchronizes menus across channels (MenuMatch), and manages locations.
+
+    The developer/API surface is partner-gated and provisioned per restaurant
+    location. A restaurant or integration partner receives a per-location API
+    key from Chowly and uses it as a credential against the base URL
+    https://api.chowlyinc.com. There is no public OpenAPI document, no public
+    API reference enumerating endpoints, and no published pricing or rate
+    limits.
+
+    The concrete, externally observable surface comes from Chowly's publicly
+    available API client libraries — most notably the open-source
+    @goparrot/chowly-api-client (github.com/goparrot/chowly-api-client) — which
+    document three operations: get menu, create order, and get order, against
+    https://api.chowlyinc.com using an API key. Chowly maintains a real public
+    GitHub organization (github.com/Chowly), though it does not host an official
+    public API specification there. The OpenAPI document in this repo models
+    only those three referenced operations with generic, non-authoritative
+    schemas and explicitly flags the rest as partner-gated. No endpoints were
+    fabricated.
+  apiAvailability:
+    publicDeveloperPortal: false
+    selfServeSignup: false
+    publicApiReference: false
+    publicOpenAPI: false
+    partnerGated: true
+    perLocationApiKey: true
+    publishedPricing: false
+    publishedRateLimits: false
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.chowlyinc.com
+      documented: partial
+      note: Base URL and three operations (get menu, create order, get order) are evidenced by public client libraries; not by an official Chowly API reference.
+    - protocol: Webhooks
+      scheme: https
+      documented: false
+      note: Webhook delivery is referenced for partner order integration but no public event/payload documentation was found.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket surface is documented.
+  endpointsReferenced:
+    - POST   https://api.chowlyinc.com/orders        (create order — representative path)
+    - GET    https://api.chowlyinc.com/orders/{id}   (get order — representative path)
+    - GET    https://api.chowlyinc.com/menu          (get menu — representative path)
+  caveat: |
+    Endpoint paths are representative. They are inferred from public client
+    library method surfaces (getMenu, createOrder, getOrder) rather than an
+    official Chowly API reference. Exact paths, payload schemas, header names,
+    and auth scheme must be confirmed with Chowly partner documentation under a
+    commercial agreement.
+sources:
+  - url: https://www.chowly.com/solutions/order-integration/
+    type: Documentation
+    note: Product description — orders fire from every delivery platform into the POS; menu sync across 150+ channels (MenuMatch); 50+ native POS integrations.
+  - url: https://www.chowly.com/chowly-platform/
+    type: Documentation
+    note: Platform overview including locations management; sales-led, custom pricing.
+  - url: https://github.com/goparrot/chowly-api-client
+    type: SDK
+    note: Open-source TypeScript client documenting base URL https://api.chowlyinc.com, API key auth, and getMenu/createOrder/getOrder operations.
+  - url: https://github.com/Chowly
+    type: GitHubOrganization
+    note: Real public Chowly GitHub organization; does not host an official public API specification.
+  - url: https://apitracker.io/a/chowly
+    type: APIReference
+    note: Third-party catalog profile; lists Chowly API existence but no public docs URL, base URL, or endpoint enumeration.
+  - url: https://chowly.help/s/faqs
+    type: Documentation
+    note: Customer knowledge base; references API keys per location and POS integration setup, not a developer reference.
+actions:
+  apisYmlUpdated: true
+  openapiCreated: openapi/chowly-openapi.yml
+  reason: |
+    Documented Chowly accurately as a partner-gated, sales-led platform with no
+    public self-serve API. The OpenAPI document models only the three
+    operations evidenced by public client libraries, with generic schemas and
+    explicit non-authoritative caveats. Plans, rate limits, and FinOps are all
+    marked reconciled: false because Chowly publishes no pricing, no rate
+    limits, and no public API reference. No endpoints, prices, or limits were
+    fabricated.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

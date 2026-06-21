@@ -1,0 +1,93 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Chowly
+providerId: chowly
+created: '2026-06-21'
+modified: '2026-06-21'
+reconciled: false
+tags:
+- Restaurants
+- Online Ordering
+- Delivery
+- POS Integration
+- Menu Sync
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of Chowly spend. Chowly is sold through a sales-led, quote-based
+  subscription model priced per restaurant and per location based on the
+  products enabled (order integration, menu sync, smart/dynamic pricing,
+  marketing, loyalty, analytics). It is not metered per API call and does not
+  publish usage-based API pricing, so cost is governed by the negotiated
+  subscription rather than per-token or per-request meters. Specific rates are
+  not reconciled in this artifact.
+notes: >-
+  Pricing is custom and not published; cost meters below are subscription- and
+  location-oriented placeholders. Reconcile against the negotiated Chowly
+  agreement and any invoice line items.
+sources:
+- https://www.chowly.com
+- https://www.chowly.com/chowly-platform/
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Chowly
+serviceCategory: Business Application Services
+billingModel:
+  pricingCategory: Subscription-Based
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+  - Subscription
+  - Usage
+  - Adjustment
+focusColumns:
+  ServiceName: Chowly Platform
+  ServiceCategory: Business Application Services
+  ProviderName: Chowly
+  PublisherName: Chowly
+  InvoiceIssuerName: Chowly
+  BillingCurrency: USD
+  ChargeCategory: Subscription
+  PricingCategory: Subscription-Based
+meters:
+- name: location_subscription
+  description: Per-location platform subscription fee, set by negotiated agreement.
+  unit: locations
+  aggregation: sum
+  dimensions:
+  - account
+  - location
+- name: enabled_products
+  description: Products turned on per location (order integration, menu sync, pricing, marketing, loyalty, analytics).
+  unit: products
+  aggregation: sum
+  dimensions:
+  - account
+  - location
+  - product
+- name: connected_channels
+  description: Third-party and direct ordering channels connected per location.
+  unit: channels
+  aggregation: sum
+  dimensions:
+  - account
+  - location
+principles:
+- name: Visibility
+  description: Track per-location subscription line items and which products are enabled per restaurant.
+- name: Allocation
+  description: Map Chowly subscription cost to locations and brands/franchisees.
+- name: Optimization
+  description: Disable unused products/channels per location; consolidate menus via MenuMatch to reduce operational overhead.
+- name: Accountability
+  description: Assign an owner per location/brand; review the Chowly subscription against order volume and direct-ordering growth.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

@@ -1,0 +1,59 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Chowly
+providerId: chowly
+created: '2026-06-21'
+modified: '2026-06-21'
+reconciled: false
+tags:
+- Restaurants
+- Online Ordering
+- Delivery
+- POS Integration
+- Menu Sync
+- Plans
+description: >-
+  Chowly is sold through a sales-led, quote-based model. Pricing is not
+  publicly published. Plans are quoted per restaurant and per location based on
+  the products turned on (order integration, menu sync/MenuMatch, smart/dynamic
+  pricing, marketing, loyalty, and analytics). There is no self-serve developer
+  tier or published per-call API pricing; access to the partner-gated POS
+  integration API is provisioned as part of a commercial agreement. Specific
+  plan names and prices are not reconciled in this artifact.
+notes: >-
+  Pricing is custom and sales-led; figures are not published by Chowly. Contact
+  Chowly sales for a per-location quote. Reconcile against any published pricing
+  if Chowly introduces transparent tiers.
+sources:
+- https://www.chowly.com
+- https://www.chowly.com/chowly-platform/
+- https://www.capterra.com/p/212043/Chowly/
+plans:
+- id: chowly-platform
+  name: Chowly Platform (custom quote)
+  type: enterprise
+  description: >-
+    Sales-led, per-location subscription bundling the products a restaurant
+    chooses to enable. Pricing is quoted by Chowly and not publicly listed.
+  entries:
+  - label: Custom Subscription
+    name: custom_subscription
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Order Integration
+  - name: Menu Sync (MenuMatch)
+  - name: Smart / Dynamic Pricing
+  - name: Marketing and SEO
+  - name: Loyalty
+  - name: Analytics
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
