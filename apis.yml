@@ -99,6 +99,10 @@ apis:
     Clover, and others). Marketplace and POS partners integrate through Chowly's
     partner program and webhook delivery rather than a documented public REST surface.
 common:
+- type: DomainSecurity
+  url: security/chowly-domain-security.yml
+- type: Authentication
+  url: authentication/chowly-authentication.yml
 - type: GitHubOrganization
   url: https://github.com/Chowly
 - type: LinkedIn
@@ -113,6 +117,8 @@ common:
   url: rate-limits/chowly-rate-limits.yml
 - type: FinOps
   url: finops/chowly-finops.yml
+- url: https://chowly.com/resources/blogs/
+  type: Blog
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
