@@ -99,6 +99,8 @@ apis:
     Clover, and others). Marketplace and POS partners integrate through Chowly's
     partner program and webhook delivery rather than a documented public REST surface.
 common:
+- type: AgenticAccess
+  url: agentic-access/chowly-agentic-access.yml
 - type: DomainSecurity
   url: security/chowly-domain-security.yml
 - type: Authentication
