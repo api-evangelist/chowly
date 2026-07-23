@@ -1,0 +1,45 @@
+openapi: 3.0.1
+info:
+  title: Chowly POS Integration Menu API
+  description: 'Partial, best-effort specification of the Chowly POS integration API. Chowly is a restaurant digital-ordering and delivery-integration platform that injects third-party marketplace orders (DoorDash, Uber Eats, Grubhub, and 150+ channels) into a restaurant POS and synchronizes menus across every channel.
+
+
+    Chowly does not publish an openly accessible developer portal or machine-readable API description. The Chowly API is partner-gated and provisioned per restaurant location: a restaurant or integration partner receives a per-location API key from Chowly and uses it as a bearer token against the base URL below. The operations modeled here are the ones surfaced by Chowly''s publicly available API client libraries (notably the open-source @goparrot/chowly-api-client), which document menu retrieval and order create/retrieve operations. Request and response payload schemas are not publicly documented and are intentionally left generic; do not treat this document as authoritative. Confirm all paths, schemas, and behavior with Chowly partner documentation under your integration agreement.'
+  termsOfService: https://www.chowly.com/terms-of-service/
+  contact:
+    name: Chowly Support
+    url: https://chowly.help/s/faqs
+  version: '1.0'
+servers:
+- url: https://api.chowlyinc.com
+  description: Chowly POS integration API base URL (per-location API key required).
+security:
+- ApiKeyAuth: []
+tags:
+- name: Menu
+  description: Retrieve the menu synchronized across ordering channels.
+paths:
+  /menu:
+    get:
+      operationId: getMenu
+      tags:
+      - Menu
+      summary: Retrieve the menu
+      description: Retrieve the menu associated with the API key's location. Referenced by public Chowly API client libraries as a get-menu operation. The exact path and response schema are partner-gated and not publicly documented.
+      responses:
+        '200':
+          description: Menu returned.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '401':
+          description: Missing or invalid API key.
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Per-location Chowly API key provisioned by Chowly. Sent as an API key / bearer credential. The exact header name and scheme are defined in Chowly's partner documentation.
