@@ -1,0 +1,16 @@
+{
+  "provider": "chowly",
+  "sources": [
+    "chowly-menu-api-openapi.yml",
+    "chowly-orders-api-openapi.yml"
+  ],
+  "outputs": [
+    "chowly-menu-api-openapi.yml",
+    "chowly-orders-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
