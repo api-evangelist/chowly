@@ -1,0 +1,166 @@
+{
+  "item": [
+    {
+      "id": "94458d7e-d93d-4eed-9ed3-3baf01f15900",
+      "name": "Menu",
+      "description": {
+        "content": "Retrieve the menu synchronized across ordering channels.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7dd02d14-dc25-40c0-81e0-704d3532d437",
+          "name": "Retrieve the menu",
+          "request": {
+            "name": "Retrieve the menu",
+            "description": {
+              "content": "Retrieve the menu associated with the API key's location. Referenced by public Chowly API client libraries as a get-menu operation. The exact path and response schema are partner-gated and not publicly documented.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "menu"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f96bd6b0-d90b-40b6-9150-48c3e01f7319",
+              "name": "Menu returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "menu"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "53071c23-7631-4cea-8131-d32195a27774",
+              "name": "Missing or invalid API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "menu"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.chowlyinc.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8a6165a4-cde2-4323-a220-a3d420b86695",
+    "name": "Chowly POS Integration Menu API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Partial, best-effort specification of the Chowly POS integration API. Chowly is a restaurant digital-ordering and delivery-integration platform that injects third-party marketplace orders (DoorDash, Uber Eats, Grubhub, and 150+ channels) into a restaurant POS and synchronizes menus across every channel.\n\nChowly does not publish an openly accessible developer portal or machine-readable API description. The Chowly API is partner-gated and provisioned per restaurant location: a restaurant or integration partner receives a per-location API key from Chowly and uses it as a bearer token against the base URL below. The operations modeled here are the ones surfaced by Chowly's publicly available API client libraries (notably the open-source @goparrot/chowly-api-client), which document menu retrieval and order create/retrieve operations. Request and response payload schemas are not publicly documented and are intentionally left generic; do not treat this document as authoritative. Confirm all paths, schemas, and behavior with Chowly partner documentation under your integration agreement.\n\nContact Support:\n Name: Chowly Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Chowly POS Integration Menu Orders API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.chowlyinc.com/orders",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit an order to be injected into the restaurant POS. Referenced by public Chowly API client libraries as a create-order operation. The exact path and payload schema are partner-gated and not publicly documented; the path shown is representative."
+        },
+        {
+          "info": {
+            "name": "Retrieve an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chowlyinc.com/orders/:orderId",
+            "params": [
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the order to retrieve."
+              }
+            ]
+          },
+          "docs": "Retrieve a previously submitted order by its identifier. Referenced by public Chowly API client libraries as a get-order operation. The exact path and response schema are partner-gated and not publicly documented."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

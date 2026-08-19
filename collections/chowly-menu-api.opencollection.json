@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Chowly POS Integration Menu API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Menu",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve the menu",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chowlyinc.com/menu"
+          },
+          "docs": "Retrieve the menu associated with the API key's location. Referenced by public Chowly API client libraries as a get-menu operation. The exact path and response schema are partner-gated and not publicly documented."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
