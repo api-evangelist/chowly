@@ -24,6 +24,12 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/chowly.png
 tags:
+- Restaurant
+- Online Ordering
+- Delivery
+- POS Integration
+- Menu Sync
+tags_raw:
 - Restaurants
 - Online Ordering
 - Delivery
@@ -36,6 +42,10 @@ apis:
 - aid: chowly:integrations
   name: Chowly Integrations API
   tags:
+  - Integration
+  - Marketplaces
+  - Webhook
+  tags_raw:
   - Integrations
   - Marketplaces
   - Webhooks
@@ -55,6 +65,8 @@ apis:
   humanURL: https://www.chowly.com/solutions/order-integration/
   baseURL: https://api.chowlyinc.com
   tags:
+  - Menus
+  tags_raw:
   - Menu
   properties:
   - type: OpenAPI
@@ -73,6 +85,8 @@ apis:
   humanURL: https://www.chowly.com/solutions/order-integration/
   baseURL: https://api.chowlyinc.com
   tags:
+  - Order
+  tags_raw:
   - Orders
   properties:
   - type: OpenAPI
