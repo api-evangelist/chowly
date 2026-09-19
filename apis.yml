@@ -56,7 +56,7 @@ apis:
   name: Chowly Integrations API
   tags:
   - Integration
-  - Marketplaces
+  - Marketplace
   - Webhook
   tags_raw:
   - Integrations
