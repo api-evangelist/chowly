@@ -1,0 +1,29 @@
+# Front Door AI Index — chowly — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: chowly
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.chowly.com
+  final_host: chowly.com
+  ownership: own
+  owner: chowly
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 15
+  host_score: 15
+  density: 14.15
+  words: 1060
+  tiers:
+    agentic: 2
+    core: 12
+    model: 1
+  ambiguous: 3
+  top_terms:
+    AI: 12
+    AI agent: 2
+    agent: 2
+    ChatGPT: 1
+    automation: 1

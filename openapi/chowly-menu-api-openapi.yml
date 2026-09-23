@@ -1,10 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
   title: Chowly POS Integration Menu API
-  description: 'Partial, best-effort specification of the Chowly POS integration API. Chowly is a restaurant digital-ordering and delivery-integration platform that injects third-party marketplace orders (DoorDash, Uber Eats, Grubhub, and 150+ channels) into a restaurant POS and synchronizes menus across every channel.
-
-
-    Chowly does not publish an openly accessible developer portal or machine-readable API description. The Chowly API is partner-gated and provisioned per restaurant location: a restaurant or integration partner receives a per-location API key from Chowly and uses it as a bearer token against the base URL below. The operations modeled here are the ones surfaced by Chowly''s publicly available API client libraries (notably the open-source @goparrot/chowly-api-client), which document menu retrieval and order create/retrieve operations. Request and response payload schemas are not publicly documented and are intentionally left generic; do not treat this document as authoritative. Confirm all paths, schemas, and behavior with Chowly partner documentation under your integration agreement.'
+  description: Partial, best-effort specification of the Chowly POS integration API.
   termsOfService: https://www.chowly.com/terms-of-service/
   contact:
     name: Chowly Support
