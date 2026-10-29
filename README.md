@@ -1,4 +1,4 @@
-# Chowly (chowly)
+# Chowly
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,109 +66,119 @@
 
 Chowly is a restaurant digital-ordering and delivery-integration platform that connects third-party delivery marketplaces (DoorDash, Uber Eats, Grubhub, and 150+ others) and direct online ordering into a restaurant's point-of-sale (POS) system. The Chowly platform injects third-party orders directly into the POS, synchronizes menus across every channel, and manages locations. Its developer surface is a partner-gated POS integration API keyed per location; the most commonly referenced operations are menu retrieval and order creation/retrieval.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/chowly/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/chowly/refs/heads/main/apis.yml)
+**Areas:** Restaurant · Online Ordering · Delivery · POS Integration · Menu Sync · Food and Beverage
 
-## Tags
+## Chowly on APIs.io
 
-- Restaurants
-- Online Ordering
-- Delivery
-- POS Integration
-- Menu Sync
+Everything profiled for Chowly is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/chowly/](https://apis.io/providers/chowly/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (3)
 
-- **Created:** 2026-06-21
-- **Modified:** 2026-06-21
+- [Chowly Integrations API](https://apis.io/apis/chowly/integrations/) — Connects third-party delivery marketplaces (DoorDash, Uber Eats, Grubhub, and 150+ channels) and 50+ native POS systems (Toast, Square, SpotOn, Clover, and…
+- [Chowly Menu API](https://apis.io/apis/chowly/chowly-menu-api/) — Retrieve the menu synchronized across ordering channels.
+- [Chowly Orders API](https://apis.io/apis/chowly/chowly-orders-api/) — Create and retrieve orders injected into the restaurant POS.
 
-## APIs
+### Published properties
 
-### Chowly Orders API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Receives third-party marketplace and direct online orders and injects them into the restaurant POS. Public client libraries reference order creation and order retrieval operations against the Chowly POS integration API. The full order surface is partner-gated and provisioned per location via an API key.
+#### Agentic access (1)
 
-- **Human URL:** [https://www.chowly.com/solutions/order-integration/](https://www.chowly.com/solutions/order-integration/)
-- **Base URL:** `https://api.chowlyinc.com`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Chowly Agentic Access](https://apis.io/agentic-access/chowly/chowly-agentic-access/)
 
-- Orders
-- Delivery
-- POS Integration
+#### Collections (3)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://www.chowly.com/solutions/order-integration/)
-- [OpenAPI](openapi/chowly-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/chowly.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/chowly.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Chowly POS Integration API](https://apis.io/collections/chowly/open-chowly/)
+- [Chowly POS Integration Menu API](https://apis.io/collections/chowly/open-chowly-menu-api/)
+- [Chowly POS Integration Menu Orders API](https://apis.io/collections/chowly/open-chowly-orders-api/)
 
-### Chowly Menu Sync API
+#### Security (2)
 
-Publishes and synchronizes a single source-of-truth menu across 150+ third-party and direct ordering channels (marketed as MenuMatch). Public client libraries reference a menu retrieval operation against the Chowly POS integration API; the authoring/publishing surface is partner-gated.
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Human URL:** [https://www.chowly.com/solutions/order-integration/](https://www.chowly.com/solutions/order-integration/)
-- **Base URL:** `https://api.chowlyinc.com`
+- [Chowly Authentication](https://apis.io/security/chowly/chowly-authentication/)
+- [Chowly Domain Security](https://apis.io/security/chowly/chowly-domain-security/)
 
-#### Tags
+#### Plans and pricing (1)
 
-- Menu Sync
-- Menu
-- MenuMatch
+Published plans, tiers and prices.
 
-#### Properties
+- [Chowly Plans Pricing](https://apis.io/plans/chowly/chowly-plans-pricing/)
 
-- [Documentation](https://www.chowly.com/solutions/order-integration/)
-- [OpenAPI](openapi/chowly-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/chowly.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/chowly.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Rate limits (1)
 
-### Chowly Stores API
+Published request limits.
 
-Restaurant store/location provisioning and management. Each location is keyed by its own Chowly API key, and the platform exposes a Manage Locations surface for enabling channels per store. No standalone public store/location endpoint is documented; the operation is described here for completeness.
+- [Chowly Rate Limits](https://apis.io/rate-limits/chowly/chowly-rate-limits/)
 
-- **Human URL:** [https://www.chowly.com/chowly-platform/](https://www.chowly.com/chowly-platform/)
-- **Base URL:** `https://api.chowlyinc.com`
+#### FinOps (1)
 
-#### Tags
+What the API costs to run, by operation.
 
-- Stores
-- Locations
-- Provisioning
+- [Chowly Finops](https://apis.io/finops/chowly/chowly-finops/)
 
-#### Properties
+## Where to find this API
 
-- [Documentation](https://www.chowly.com/chowly-platform/)
-- [OpenAPI](openapi/chowly-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-### Chowly Integrations API
-
-Connects third-party delivery marketplaces (DoorDash, Uber Eats, Grubhub, and 150+ channels) and 50+ native POS systems (Toast, Square, SpotOn, Clover, and others). Marketplace and POS partners integrate through Chowly's partner program and webhook delivery rather than a documented public REST surface.
-
-- **Human URL:** [https://partners.olo.com/partners/chowly/](https://partners.olo.com/partners/chowly/)
-- **Base URL:** `https://api.chowlyinc.com`
-
-#### Tags
-
-- Integrations
-- Marketplaces
-- Webhooks
-
-#### Properties
-
-- [Documentation](https://www.chowly.com/solutions/order-integration/)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/Chowly)
-- [LinkedIn](https://www.linkedin.com/company/chowly)
 - [Website](https://www.chowly.com)
 - [Documentation](https://chowly.help/s/faqs)
-- [Plans](plans/chowly-plans-pricing.yml)
-- [Rate Limits](rate-limits/chowly-rate-limits.yml)
-- [Fin Ops](finops/chowly-finops.yml)
+- [Blog](https://chowly.com/resources/blogs/)
+- [GitHub](https://github.com/Chowly)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 25.0** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 50.2 |
+| Contract governance | 0.0 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 25.0 |
+| Access clarity | 5.3 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/chowly/](https://apis.io/providers/chowly/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Chowly: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/chowly/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
